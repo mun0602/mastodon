@@ -44,11 +44,11 @@ clean_existing_containers() {
 # Kiểm tra điều kiện máy chủ
 check_server_requirements() {
   echo "Kiểm tra điều kiện máy chủ..."
-  REQUIRED_MEMORY=4000000 # Yêu cầu tối thiểu 4GB RAM (kB)
+  REQUIRED_MEMORY=2000000 # Yêu cầu tối thiểu 2GB RAM (kB)
   AVAILABLE_MEMORY=$(grep MemTotal /proc/meminfo | awk '{print $2}')
 
   if [ "$AVAILABLE_MEMORY" -lt "$REQUIRED_MEMORY" ]; then
-    echo "Không đủ RAM. Máy chủ cần tối thiểu 4GB RAM."
+    echo "Không đủ RAM. Máy chủ cần tối thiểu 2GB RAM."
     exit 1
   fi
 
