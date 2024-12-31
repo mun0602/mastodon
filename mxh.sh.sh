@@ -52,11 +52,11 @@ check_server_requirements() {
     exit 1
   fi
 
-  REQUIRED_DISK_SPACE=20000 # Yêu cầu tối thiểu 20GB dung lượng đĩa trống (MB)
+  REQUIRED_DISK_SPACE=10000 # Yêu cầu tối thiểu 10GB dung lượng đĩa trống (MB)
   AVAILABLE_DISK_SPACE=$(df / | tail -1 | awk '{print $4}')
 
   if [ "$AVAILABLE_DISK_SPACE" -lt "$REQUIRED_DISK_SPACE" ]; then
-    echo "Không đủ dung lượng đĩa. Máy chủ cần tối thiểu 20GB dung lượng trống."
+    echo "Không đủ dung lượng đĩa. Máy chủ cần tối thiểu 10GB dung lượng trống."
     exit 1
   fi
 
